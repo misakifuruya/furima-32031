@@ -18,6 +18,7 @@
 ### Association
 
 - has_many :items
+- has_one  :buy
 
 
 
@@ -53,6 +54,7 @@
 ### Association
 
 - belongs_to :item
+- belongs_to :user
 - has_one    :shipping address
 
 
