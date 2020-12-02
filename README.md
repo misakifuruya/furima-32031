@@ -26,15 +26,14 @@
 
 | Column        | Type          | Options                        |
 | ------------- | ------------- | ------------------------------ |
-| image         | ActiveStorage |                                |
 | title         | string        | null: false                    |
 | seller        | references    | null: false, foreign_key: true |
-| explanation   | string        | null: false                    |
+| explanation   | text          | null: false                    |
 | category      | string        | null: false                    |
-| status        | string        | null: false                    |
-| shipping cost | string        | null: false                    |
-| area          | string        | null: false                    |
-| days          | string        | null: false                    |
+| status        | integer       | null: false                    |
+| shipping cost | integer       | null: false                    |
+| area          | integer       | null: false                    |
+| days          | integer       | null: false                    |
 | price         | integer       | null: false                    |
 
 ### Association
@@ -61,17 +60,14 @@
 
 ## shipping address
 
-| Column          | Type   | Options     |
-| --------------- | ------ | ----------- |
-| credit          | string | null: false |
-| expiration date | string | null: false |
-| security        | string | null: false |
-| postal code     |
-| address1        |
-| address2        |
-| address3        |
-| address4        |
-| phone number    |
+| Column          | Type    | Options     |
+| --------------- | ------- | ----------- |
+| postal code     | integer | null: false |
+| address1        | text    | null: false |
+| address2        | text    | null: false |
+| address3        | text    | null: false |
+| address4        | text    | null: false |
+| phone number    | integer | null: false |
 
 ### Association
 
