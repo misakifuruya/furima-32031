@@ -27,7 +27,7 @@
 | Column           | Type          | Options                        |
 | ---------------- | ------------- | ------------------------------ |
 | title            | string        | null: false                    |
-| seller           | references    | null: false, foreign_key: true |
+| user             | references    | null: false, foreign_key: true |
 | explanation      | text          | null: false                    |
 | category_id      | string        | null: false                    |
 | status_id        | integer       | null: false                    |
@@ -63,7 +63,7 @@
 | Column          | Type    | Options     |
 | --------------- | ------- | ----------- |
 | postal code     | integer | null: false |
-| address1        | string  | null: false |
+| area_id         | string  | null: false |
 | address2        | string  | null: false |
 | address3        | string  | null: false |
 | address4        | string  | null: false |
