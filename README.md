@@ -63,12 +63,12 @@
 | Column          | Type       | Options                        |
 | --------------- | ---------- | ------------------------------ |
 | postal code     | string     | null: false                    |
-| area_id         | string     | null: false                    |
+| area            | string     | null: false                    |
 | prefectures_id  | integer    | null: false                    |
 | city            | string     | null: false                    |
 | district        | string     |                                |
 | phone number    | string     | null: false                    |
-| buy_id          | references | null: false, foreign_key: true |
+| buy             | references | null: false, foreign_key: true |
 
 ### Association
 
