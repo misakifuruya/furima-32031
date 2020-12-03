@@ -18,7 +18,7 @@
 ### Association
 
 - has_many :items
-- has_one  :buy
+- has_many :buys
 
 
 
@@ -43,7 +43,7 @@
 
 
 
-## buy テーブル
+## buys テーブル
 
 | Column | Type       | Options                        |
 | ------ | ---------- | ------------------------------ |
@@ -66,8 +66,9 @@
 | area_id         | string  | null: false |
 | address2        | string  | null: false |
 | address3        | string  | null: false |
-| address4        | string  | null: false |
+| address4        | string  |             |
 | phone number    | integer | null: false |
+| buy_id          | integer | null: false |
 
 ### Association
 
