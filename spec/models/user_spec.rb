@@ -53,5 +53,37 @@ RSpec.describe User, type: :model do
       @user.valid?
       expect(@user.errors.full_messages).to include("Birthday can't be blank")
     end
+
+    it 'emailに@が含まれていない場合に登録ができないこと' do
+    end
+
+    it '重複するemailが存在する場合に登録ができないこと' do
+    end
+
+    it 'passwordが英字のみの場合に登録ができないこと' do
+    end
+
+    it 'passwordが数字のみの場合に登録ができないこと' do
+    end
+
+    it 'passwordが全角では登録ができないこと' do
+    end
+
+    it 'passwordとpassword_confirmationは値が同じでないと登録出来ないこと' do
+    end
+
+    it 'last_nameが全角漢字・ひらがな・カタカナ以外の場合に登録ができないこと' do
+    end
+
+    it 'first_nameが全角漢字・ひらがな・カタカナ以外の場合に登録ができないこと' do
+    end
+
+    it 'last_name_kanaが全角カタカナ以外の場合に登録ができないこと' do
+    end
+
+    it 'first_name_kanaが全角カタカナ以外の場合に登録ができないこと' do
+    end
+
+
   end
 end
