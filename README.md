@@ -2,7 +2,7 @@
 
 
 
-## useers テーブル
+## users テーブル
 
 | Column             | Type   | Options     |
 | ------------------ | ------ | ----------- |
@@ -60,15 +60,15 @@
 
 ## shipping address
 
-| Column          | Type    | Options     |
-| --------------- | ------- | ----------- |
-| postal code     | integer | null: false |
-| area_id         | string  | null: false |
-| address2        | string  | null: false |
-| address3        | string  | null: false |
-| address4        | string  |             |
-| phone number    | integer | null: false |
-| buy_id          | integer | null: false |
+| Column          | Type       | Options                        |
+| --------------- | ---------- | ------------------------------ |
+| postal code     | string     | null: false                    |
+| area_id         | string     | null: false                    |
+| prefectures_id  | integer    | null: false                    |
+| city            | string     | null: false                    |
+| district        | string     |                                |
+| phone number    | string     | null: false                    |
+| buy_id          | references | null: false, foreign_key: true |
 
 ### Association
 
