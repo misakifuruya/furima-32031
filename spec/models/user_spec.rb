@@ -112,8 +112,47 @@ RSpec.describe User, type: :model do
       expect(@user.errors.full_messages).to include("Last name kana is invalid")
     end
 
+    it 'last_name_kanaが全角カタカナ以外の場合に登録ができないこと' do
+      @user.last_name_kana = "あ"
+      @user.valid?
+      expect(@user.errors.full_messages).to include("Last name kana is invalid")
+    end
+
+    it 'last_name_kanaが全角カタカナ以外の場合に登録ができないこと' do
+      @user.last_name_kana = "a"
+      @user.valid?
+      expect(@user.errors.full_messages).to include("Last name kana is invalid")
+    
+    end
+
+    it 'last_name_kanaが全角カタカナ以外の場合に登録ができないこと' do
+      @user.last_name_kana = "1"
+      @user.valid?
+      expect(@user.errors.full_messages).to include("Last name kana is invalid")
+    end
+
+
+
     it 'first_name_kanaが全角カタカナ以外の場合に登録ができないこと' do
       @user.first_name_kana = "ｲ"
+      @user.valid?
+      expect(@user.errors.full_messages).to include("First name kana is invalid")
+    end
+
+    it 'first_name_kanaが全角カタカナ以外の場合に登録ができないこと' do
+      @user.first_name_kana = "い"
+      @user.valid?
+      expect(@user.errors.full_messages).to include("First name kana is invalid")
+    end
+
+    it 'first_name_kanaが全角カタカナ以外の場合に登録ができないこと' do
+      @user.first_name_kana = "i"
+      @user.valid?
+      expect(@user.errors.full_messages).to include("First name kana is invalid")
+    end
+
+    it 'first_name_kanaが全角カタカナ以外の場合に登録ができないこと' do
+      @user.first_name_kana = "2"
       @user.valid?
       expect(@user.errors.full_messages).to include("First name kana is invalid")
     end
