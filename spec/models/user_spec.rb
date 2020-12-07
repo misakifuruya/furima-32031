@@ -6,6 +6,52 @@ RSpec.describe User, type: :model do
 
 
   describe 'ユーザー新規登録' do
+    context '新規登録がうまくいくとき' do
+      it "nicknameが存在すれば登録できる" do
+        @user.nickname = "aaaaaa"
+        expect(@user).to be_valid
+      end
+
+      it "emailが存在すれば登録できる" do
+        @user.email = "kkk@gmail.com"
+        expect(@user).to be_valid
+      end
+
+
+      it "passwordが存在すれば登録できる" do
+        @user.password = "a000000"
+        expect(@user).to be_valid
+      end
+
+      it "last_nameが存在すれば登録できる" do
+        @user.last_name = "あ"
+        expect(@user).to be_valid
+      end
+
+      it "first_nameが存在すれば登録できる" do
+        @user.first_name = "い"
+        expect(@user).to be_valid
+      end
+
+      it "last_name_kanaが存在すれば登録できる" do
+        @user.last_name_kana = "ア"
+        expect(@user).to be_valid
+      end
+
+      it "first_name_kanaが存在すれば登録できる" do
+        @user.first_name_kana = "イ"
+        expect(@user).to be_valid
+      end
+
+      it "birthdayが存在すれば登録できる" do
+        @user.birthday = "1990-01-01"
+        expect(@user).to be_valid
+      end
+
+    end
+
+
+
     context '新規登録がうまくいかない時' do
     it 'nicknameが空だと登録できない' do
       @user.nickname = ''
@@ -75,7 +121,7 @@ RSpec.describe User, type: :model do
     end
 
     it 'passwordが数字のみの場合に登録ができないこと' do
-      @user.password = "111111"
+      @user.password = 111111
       @user.valid?
       expect(@user.errors.full_messages).to include("Password is invalid")
     end
@@ -126,7 +172,7 @@ RSpec.describe User, type: :model do
     end
 
     it 'last_name_kanaが全角カタカナ以外の場合に登録ができないこと' do
-      @user.last_name_kana = "1"
+      @user.last_name_kana = 1
       @user.valid?
       expect(@user.errors.full_messages).to include("Last name kana is invalid")
     end
@@ -152,7 +198,7 @@ RSpec.describe User, type: :model do
     end
 
     it 'first_name_kanaが全角カタカナ以外の場合に登録ができないこと' do
-      @user.first_name_kana = "2"
+      @user.first_name_kana = 2
       @user.valid?
       expect(@user.errors.full_messages).to include("First name kana is invalid")
     end
