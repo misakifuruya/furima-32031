@@ -48,10 +48,10 @@ RSpec.describe Item, type: :model do
         expect(@item.errors.full_messages).to include 'Area is not a number'
       end
 
-      it 'days_idが存在しないと出品できない' do
-        @item.days_id = ''
+      it 'schedule_idが存在しないと出品できない' do
+        @item.schedule_id = ''
         @item.valid?
-        expect(@item.errors.full_messages).to include 'Days is not a number'
+        expect(@item.errors.full_messages).to include 'Schedule is not a number'
       end
 
       it 'priceが存在しないと出品できない' do
@@ -72,10 +72,10 @@ RSpec.describe Item, type: :model do
         expect(@item.errors.full_messages).to include 'Area must be other than 1'
       end
 
-      it 'days_idが1の場合出品できない' do
-        @item.days_id = 1
+      it 'schedule_idが1の場合出品できない' do
+        @item.schedule_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include 'Days must be other than 1'
+        expect(@item.errors.full_messages).to include 'Schedule must be other than 1'
       end
 
       it 'shipping_cost_idが1の場合出品できない' do
