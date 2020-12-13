@@ -33,7 +33,7 @@
 | status_id        | integer       | null: false                    |
 | shipping cost_id | integer       | null: false                    |
 | area_id          | integer       | null: false                    |
-| schedule_id          | integer       | null: false                    |
+| schedule_id      | integer       | null: false                    |
 | price            | integer       | null: false                    |
 
 ### Association
