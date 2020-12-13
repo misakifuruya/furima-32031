@@ -43,6 +43,8 @@
 
 
 
+
+
 ## buys テーブル
 
 | Column | Type       | Options                        |
