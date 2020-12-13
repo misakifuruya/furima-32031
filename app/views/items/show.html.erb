@@ -20,11 +20,11 @@
       <%= @item.price %>
       </span>
       <span class="item-postage">
-        <%=@item.shipping_cost_id %>
+        <%=@item.shipping_cost.name %>
       </span>
     </div>
 
-    <%# ログインしているユーザーと出品しているユーザーが、同一人物の場合と同一人物ではない場合で、処理を分けましょう %>
+
 
   <% if user_signed_in? && current_user.id == @item.user_id %>
     <%= link_to '商品の編集', "#", method: :get, class: "item-red-btn" %>
@@ -32,14 +32,10 @@
     <%= link_to '削除', "#", method: :delete, class:'item-destroy' %>
 
   <% elsif user_signed_in? && @item.present? %>
-    <%# 商品が売れていない場合はこちらを表示しましょう %>
+
     <%= link_to '購入画面に進む', "#" ,class:"item-red-btn"%>
-    <%# //商品が売れていない場合はこちらを表示しましょう %>
-
-
 <%end%>
 
-    <%# //ログインしているユーザーと出品しているユーザーが、同一人物の場合と同一人物ではない場合で、処理を分けましょう %>
 
     <div class="item-explain-box">
       <span><%= @item.explanation %></span>
@@ -52,23 +48,23 @@
         </tr>
         <tr>
           <th class="detail-item">カテゴリー</th>
-          <td class="detail-value"><%= @item.category_id %></td>
+          <td class="detail-value"><%= @item.category.name %></td>
         </tr>
         <tr>
           <th class="detail-item">商品の状態</th>
-          <td class="detail-value"><%= @item.status_id %></td>
+          <td class="detail-value"><%= @item.status.name%></td>
         </tr>
         <tr>
           <th class="detail-item">配送料の負担</th>
-          <td class="detail-value"><%= @item.shipping_cost_id %></td>
+          <td class="detail-value"><%= @item.shipping_cost.name %></td>
         </tr>
         <tr>
           <th class="detail-item">発送元の地域</th>
-          <td class="detail-value"><%= @item.area_id %></td>
+          <td class="detail-value"><%= @item.area.name %></td>
         </tr>
         <tr>
           <th class="detail-item">発送日の目安</th>
-          <td class="detail-value"><%= @item.days_id %></td>
+          <td class="detail-value"><%= @item.schedule.name %></td>
         </tr>
       </tbody>
     </table>
