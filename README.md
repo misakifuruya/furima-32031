@@ -18,7 +18,7 @@
 ### Association
 
 - has_many :items
-- has_many :buys
+- has_many :orders
 
 
 
@@ -38,14 +38,14 @@
 
 ### Association
 
-- has_one    :buy
+- has_one    :order
 - belongs_to :user
 
 
 
 
 
-## buys テーブル
+## orders テーブル
 
 | Column | Type       | Options                        |
 | ------ | ---------- | ------------------------------ |
@@ -56,11 +56,12 @@
 
 - belongs_to :item
 - belongs_to :user
-- has_one    :shipping address
+- has_one    :address
 
 
 
-## shipping address
+
+## address
 
 | Column          | Type       | Options                        |
 | --------------- | ---------- | ------------------------------ |
@@ -70,11 +71,11 @@
 | city            | string     | null: false                    |
 | district        | string     |                                |
 | phone number    | string     | null: false                    |
-| buy             | references | null: false, foreign_key: true |
+| order           | references | null: false, foreign_key: true |
 
 ### Association
 
-- belongs_to :buy
+- belongs_to :order
 
 
 
