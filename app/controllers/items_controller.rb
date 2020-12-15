@@ -26,7 +26,7 @@ class ItemsController < ApplicationController
 
   def edit
 
-     if  authenticate_user! && move_to_index
+     if edit
        
      else
       redirect_to root_path
@@ -36,11 +36,11 @@ class ItemsController < ApplicationController
   end
 
   def update
-    if authenticate_user! && move_to_index
-      @item.update(item_params)
+    if  @item.update(item_params)
+      redirect_to root_path
 
     else
-      render :index
+      render :edit
 
     end
 
