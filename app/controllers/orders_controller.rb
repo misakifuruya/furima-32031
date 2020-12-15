@@ -13,6 +13,12 @@ end
       render 'index'
     end
   end
+
+  private
+
+  def order_params
+    params.require(:order).permit(:user_id, :item_id)
+  end
 end
 
 
