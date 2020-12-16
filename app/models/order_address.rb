@@ -11,8 +11,8 @@ class OrderAddress
   validates :city,             presence: true
   validates :phone_number,     presence: true
 
-
-   validates :phone_number, format: { with: /\A[0-9]+\z/i }
+   validates :postal_code, format: { with: /\A\d{3}[-]\d{4}\z/ }
+   validates :phone_number, format: { with: /[0-9\d]{11,}/i }
    validates :city, format: { with: /\A[ぁ-んァ-ン一-龥]/}
    validates :district, format: { with: /\A[ぁ-んァ-ン一-龥]/}
 

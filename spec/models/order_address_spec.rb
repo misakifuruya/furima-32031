@@ -16,9 +16,21 @@ RSpec.describe OrderAddress, type: :model do
 
     context '購入の保存がうまくいかない時' do
       it "postal_codeにはハイフンがないと購入できない" do
+        @order_address.postal_code = '0000000'
+        @order_address.valid?
+        expect(@order_address.errors.full_messages).to include "Postal code is invalid"
       end
 
-      it "phone_numberにはハイフンは不要で、11桁以内でないと購入できない" do
+      it "phone_numberにはハイフンがあると購入できない" do
+        @order_address.phone_number= '000-0000-00000'
+        @order_address.valid?
+        expect(@order_address.errors.full_messages).to include "Phone number is invalid"
+      end
+
+      it "phone_numberは、11桁以内でないと購入できない" do
+        @order_address.phone_number= '00000'
+        @order_address.valid?
+        expect(@order_address.errors.full_messages).to include "Phone number is invalid"
       end
 
       it "postal_codeが存在しないと購入できない" do
