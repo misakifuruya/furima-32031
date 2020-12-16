@@ -4,6 +4,5 @@ class Order < ApplicationRecord
   has_one    :address
   belongs_to :area
 
-  validates :area_id, numericality: { other_than: 1 }
-  validates :user, :item,  presence: true
+
 end
