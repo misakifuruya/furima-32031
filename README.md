@@ -67,7 +67,7 @@
 | --------------- | ---------- | ------------------------------ |
 | postal code     | string     | null: false                    |
 | area            | string     | null: false                    |
-| prefectures_id  | integer    | null: false                    |
+| prefecture_id  | integer    | null: false                    |
 | city            | string     | null: false                    |
 | district        | string     |                                |
 | phone number    | string     | null: false                    |
