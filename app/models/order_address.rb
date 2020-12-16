@@ -17,7 +17,6 @@ class OrderAddress
    validates :district, format: { with: /\A[ぁ-んァ-ン一-龥]/}
 
 def save
-  binding.pry
   order = Order.create(user_id: user_id, item_id: item_id)
   Address.create(postal_code: postal_code, prefecture: prefecture, city: city, area_id: area_id, district: district, phone_number: phone_number, order_id: order.id)
 

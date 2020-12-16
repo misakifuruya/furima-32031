@@ -72,6 +72,7 @@ RSpec.describe Item, type: :model do
         expect(@item.errors.full_messages).to include 'Area must be other than 1'
       end
 
+      
       it 'schedule_idが1の場合出品できない' do
         @item.schedule_id = 1
         @item.valid?
