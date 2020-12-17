@@ -6,7 +6,7 @@ class OrderAddress
   with_options presence: true do
   validates :area_id, numericality: { other_than: 1 }
   validates :postal_code, format: { with: /\A\d{3}-\d{4}\z/ }
-  validates :phone_number, format: { with: /[0-9\d]{11,}/i }
+  validates :phone_number, format: { with: /\A[0-9]{10,11}\z/ }
   validates :city, format: { with: /\A[ぁ-んァ-ン一-龥]/ }
   validates :user_id
   validates :item_id
