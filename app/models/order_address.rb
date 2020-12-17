@@ -8,13 +8,12 @@ class OrderAddress
   validates :postal_code, format: { with: /\A\d{3}-\d{4}\z/ }
   validates :phone_number, format: { with: /[0-9\d]{11,}/i }
   validates :city, format: { with: /\A[ぁ-んァ-ン一-龥]/ }
+  validates :user_id
+  validates :item_id
+  validates :prefecture
+  validates :token
    end
-   validates :user_id,          presence: true
-   validates :item_id,          presence: true
-   validates :prefecture,       presence: true
- 
-   validates :token, presence: true
-  validates :district, format: { with: /\A[ぁ-んァ-ン一-龥]/ }
+
 
   def save
     order = Order.create(user_id: user_id, item_id: item_id)
