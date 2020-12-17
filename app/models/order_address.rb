@@ -13,15 +13,13 @@ class OrderAddress
 
   validates :token, presence: true
 
-   validates :postal_code, format: { with: /\A\d{3}[-]\d{4}\z/ }
-   validates :phone_number, format: { with: /[0-9\d]{11,}/i }
-   validates :city, format: { with: /\A[ぁ-んァ-ン一-龥]/}
-   validates :district, format: { with: /\A[ぁ-んァ-ン一-龥]/}
+  validates :postal_code, format: { with: /\A\d{3}-\d{4}\z/ }
+  validates :phone_number, format: { with: /[0-9\d]{11,}/i }
+  validates :city, format: { with: /\A[ぁ-んァ-ン一-龥]/ }
+  validates :district, format: { with: /\A[ぁ-んァ-ン一-龥]/ }
 
-def save
-  order = Order.create(user_id: user_id, item_id: item_id)
-  Address.create(postal_code: postal_code, prefecture: prefecture, city: city, area_id: area_id, district: district, phone_number: phone_number, order_id: order.id)
-
-end
-
+  def save
+    order = Order.create(user_id: user_id, item_id: item_id)
+    Address.create(postal_code: postal_code, prefecture: prefecture, city: city, area_id: area_id, district: district, phone_number: phone_number, order_id: order.id)
+  end
 end
