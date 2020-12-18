@@ -5,7 +5,7 @@ class ItemsController < ApplicationController
 
   def index
     @items = Item.order('created_at DESC')
-  end
+  end 
 
   def new
     @item = Item.new
@@ -24,7 +24,9 @@ class ItemsController < ApplicationController
   end
 
   def edit
-
+    if @item.order != nil 
+      redirect_to root_path
+    end
   end
 
   def update
