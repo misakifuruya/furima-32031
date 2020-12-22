@@ -19,6 +19,7 @@
 
 - has_many :items
 - has_many :orders
+- has_many :comments
 
 
 
@@ -40,7 +41,7 @@
 
 - has_one    :order
 - belongs_to :user
-
+- has_many :comments
 
 
 
@@ -61,13 +62,13 @@
 
 
 
-## address
+## address テーブル
 
 | Column          | Type       | Options                        |
 | --------------- | ---------- | ------------------------------ |
 | postal code     | string     | null: false                    |
 | area            | string     | null: false                    |
-| prefecture_id  | integer    | null: false                    |
+| prefecture_id   | integer    | null: false                    |
 | city            | string     | null: false                    |
 | district        | string     |                                |
 | phone number    | string     | null: false                    |
@@ -76,6 +77,23 @@
 ### Association
 
 - belongs_to :order
+
+
+
+## comments テーブル
+
+| Column  | Type       | Options     |
+| ------- | ---------- | ----------- |
+| user_id | integer    | null: false |
+| item_id | integer    | null: false |
+| test    | text       | null: false |
+
+
+### Association
+
+- belongs_to :user
+- belongs_to :item
+
 
 
 
